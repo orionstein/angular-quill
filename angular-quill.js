@@ -22,7 +22,7 @@
         restrict: 'A',
         require: "ngModel",
         replace: true,
-        templateUrl: currentScriptPath.replace('.js', '.html'),
+        templateUrl: 'global/base/layouts/quill/angular-quill.html',
         controller: function () {
 
         },
