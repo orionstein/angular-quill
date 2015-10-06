@@ -22,10 +22,7 @@
         restrict: 'A',
         require: "ngModel",
         replace: true,
-        templateUrl: 'global/base/layouts/quill/angular-quill.html',
-        controller: function () {
-
-        },
+        templateUrl: 'global/features/quill/angular-quill.html',
         link: function (scope, element, attrs, ngModel) {
 
           var updateModel = function updateModel(value) {
