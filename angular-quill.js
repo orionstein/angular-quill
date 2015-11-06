@@ -65,12 +65,6 @@
 
           });
 
-          scope.$on('$destroy', function(){
-            editor.unbind();
-            editor = null;
-          });
-
-
           ngModel.$render = function() {
             if (angular.isDefined(editor)) {
               $timeout(function() {
