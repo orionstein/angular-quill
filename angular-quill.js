@@ -65,7 +65,7 @@
 
           });
 
-          scope.$('$destroy', function(){
+          scope.$on('$destroy', function(){
             editor.unbind();
             editor = null;
           });
