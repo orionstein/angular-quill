@@ -59,7 +59,7 @@
             
             if (attrs.hasplaceholder){
               editor.on('focus', function(delta, source) {
-                _.once( function(){ updateModel('') );
+                _.once( function(){ updateModel('') });
               });
             }
 
