@@ -58,7 +58,9 @@
             ngModel.$render();
             
             if (attrs.hasplaceholder){
-              editor.once('focus', updateModel(''));
+              editor.on('focus', function(delta, source) {
+                _.once( function(){ updateModel('') );
+              });
             }
 
             editor.on('text-change', function(delta, source) {
