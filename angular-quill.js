@@ -48,12 +48,18 @@
             editor;
 
           angular.extend(options, extraOptions);
+          
+          
 
           $timeout(function() {
 
             editor = new Quill(element.children()[1], options);
 
             ngModel.$render();
+            
+            if (attr.hasplaceholder){
+              editor.once('focus', updateModel(''));
+            }
 
             editor.on('text-change', function(delta, source) {
               updateModel(this.getHTML());
