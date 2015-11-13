@@ -57,7 +57,7 @@
 
             ngModel.$render();
             
-            if (attr.hasplaceholder){
+            if (attrs.hasplaceholder){
               editor.once('focus', updateModel(''));
             }
 
