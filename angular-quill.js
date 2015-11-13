@@ -68,6 +68,9 @@
             });
 
             editor.once('selection-change', function(hasFocus) {
+              if (attrs.hasplaceholder){
+               updateModel('');
+              }
               $(editor).toggleClass('focus', hasFocus);
             });
 
