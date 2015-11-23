@@ -55,6 +55,11 @@
 
             ngModel.$render();
 
+            if (hasPlaceholder);
+            {
+              editor.setText(attrs.placeholder);
+            }
+
             editor.on('text-change', function(delta, source) {
               updateModel(this.getHTML());
             });
