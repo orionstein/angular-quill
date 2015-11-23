@@ -59,13 +59,13 @@
             
             if (attrs.hasplaceholder){
               console.log('hasplaceholder');
-              console.log(element.children());
+              console.log(element.find('.ql-editor'));
               console.log(element.children()[1]);
               element.on('focus', function(delta, source) {
                 console.log('focus main');
                 _.once( function(){ updateModel('') });
               });
-              $(element.children()[1]).on('focus', function(delta, source) {
+              $(element.find('.ql-editor')).on('focus', function(delta, source) {
                 console.log('focus child');
                 _.once( function(){ updateModel('') });
               });
