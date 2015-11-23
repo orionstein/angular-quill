@@ -36,13 +36,11 @@
                   container: '.toolbar'
                 },
                 'image-tooltip': true,
-                'link-tooltip': true,
-                'placeholder': {
-                  text: attrs.placeholder || ''
-                }
+                'link-tooltip': true
               },
               theme: 'snow'
             },
+            hasPlaceholder = attrs.hasplaceholder,
             extraOptions = attrs.quill ?
               scope.$eval(attrs.quill) : {},
             editor;
@@ -57,21 +55,14 @@
 
             ngModel.$render();
 
-            if (attrs.hasplaceholder) {
-              $(element.find('.ql-editor')).on('focus', function(delta, source) {
-                scope.$apply(function() {
-                  _.once(function() {
-                    updateModel('')
-                  });
-                });
-              });
-            }
-
             editor.on('text-change', function(delta, source) {
               updateModel(this.getHTML());
             });
 
             editor.once('selection-change', function(hasFocus) {
+              if (hasFocus && hasPlaceholder) {
+                editor.setText('\n');
+              }
               $(editor).toggleClass('focus', hasFocus);
             });
 
