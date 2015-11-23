@@ -65,7 +65,7 @@
                 console.log('focus main');
                 _.once( function(){ updateModel('') });
               });
-              element.children()[1].on('focus', function(delta, source) {
+              $(element.children()[1]).on('focus', function(delta, source) {
                 console.log('focus child');
                 _.once( function(){ updateModel('') });
               });
