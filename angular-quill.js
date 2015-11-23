@@ -54,7 +54,7 @@
             editor = new Quill(element.children()[1], options);
 
 
-            if (hasPlaceholder);
+            if (hasPlaceholder)
             {
               editor.setText(attrs.placeholder);
             }
