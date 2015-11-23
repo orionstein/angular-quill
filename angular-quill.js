@@ -59,8 +59,8 @@
             
             if (attrs.hasplaceholder){
               console.log('hasplaceholder');
+              console.log(element.children());
               editor.on('focus', function(delta, source) {
-                console.log(element.children());
                 console.log('focus?');
                 _.once( function(){ updateModel('') });
               });
