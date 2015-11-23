@@ -48,19 +48,22 @@
             editor;
 
           angular.extend(options, extraOptions);
-          
-          
+
+
 
           $timeout(function() {
 
             editor = new Quill(element.children()[1], options);
 
             ngModel.$render();
-            
-            if (attrs.hasplaceholder){
+
+            if (attrs.hasplaceholder) {
               $(element.find('.ql-editor')).on('focus', function(delta, source) {
-                updateModel('');
-                _.once( function(){ updateModel('') });
+                scope.$apply(function() {
+                  _.once(function() {
+                    updateModel('')
+                  });
+                });
               });
             }
 
