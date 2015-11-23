@@ -53,11 +53,14 @@
 
             editor = new Quill(element.children()[1], options);
 
-            ngModel.$render();
 
             if (hasPlaceholder);
             {
               editor.setText(attrs.placeholder);
+            }
+            else
+            {
+              ngModel.$render();
             }
 
             editor.on('text-change', function(delta, source) {
