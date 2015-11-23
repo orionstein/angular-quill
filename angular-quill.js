@@ -58,19 +58,8 @@
             ngModel.$render();
             
             if (attrs.hasplaceholder){
-              console.log('hasplaceholder');
-              console.log(element.find('.ql-editor'));
-              console.log(element.children()[1]);
-              element.on('focus', function(delta, source) {
-                console.log('focus main');
-                _.once( function(){ updateModel('') });
-              });
               $(element.find('.ql-editor')).on('focus', function(delta, source) {
-                console.log('focus child');
-                _.once( function(){ updateModel('') });
-              });
-              editor.on('focus', function(delta, source) {
-                console.log('focus editor');
+                updateModel('');
                 _.once( function(){ updateModel('') });
               });
             }
@@ -80,9 +69,6 @@
             });
 
             editor.once('selection-change', function(hasFocus) {
-              if (attrs.hasplaceholder){
-               updateModel('');
-              }
               $(editor).toggleClass('focus', hasFocus);
             });
 
